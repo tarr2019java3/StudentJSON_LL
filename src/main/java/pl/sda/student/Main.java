@@ -15,18 +15,18 @@ public class Main {
         Student student1 = new Student("Marek", "Kwiatkowski", 26);
         Student student2 = new Student("Marcin", "Nowak", 42);
         Student student3 = new Student("Dawid", "Rutkowski", 36);
-        Student student4 = new Student("Krzysztof", "Szybki", 1);
+        Student student4 = new Student("Krzysztof", "Szybki", 19);
         Student student5 = new Student("Andrzej", "Parapet", 22);
 
         ObjectMapper objectMapper = new ObjectMapper();
-        List<Student> studentList = new ArrayList<>() ;
-        studentList.add(student) ;
-        studentList.add(student1) ;
-        studentList.add(student2) ;
-        studentList.add(student3) ;
-        studentList.add(student4) ;
-        studentList.add(student5) ;
-       try {
+        List<Student> studentList = new ArrayList<>();
+        studentList.add(student);
+        studentList.add(student1);
+        studentList.add(student2);
+        studentList.add(student3);
+        studentList.add(student4);
+        studentList.add(student5);
+        try {
             objectMapper.writeValue(new File("student_lista.json"), studentList);
             objectMapper.writeValue(new File("student.json"), student);
             objectMapper.writeValue(new File("student1.json"), student);
@@ -37,8 +37,9 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
-       JSONUtils jsonUtils = new JSONUtils() ;
-        jsonUtils.writeList("lista.json" , studentList);
+        JSONUtils jsonUtils = new JSONUtils();
+        jsonUtils.writeList("lista.json", studentList);
         jsonUtils.readList("Lista.json");
     }
 }
+

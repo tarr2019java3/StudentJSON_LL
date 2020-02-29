@@ -10,10 +10,10 @@ import java.util.List;
 
 
 public class JSONUtils {
-    public  void writeList(String filename , List<Student> students) {
-        ObjectMapper objectMapper = new ObjectMapper() ;
+    public void writeList(String filename, List<Student> students) {
+        ObjectMapper objectMapper = new ObjectMapper();
         try {
-            objectMapper.writeValue(new File(filename) , students);
+            objectMapper.writeValue(new File(filename), students);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -23,16 +23,17 @@ public class JSONUtils {
 
     public void readList(String filename) {
 
-         ObjectMapper objectMapper = new ObjectMapper() ;
+        ObjectMapper objectMapper = new ObjectMapper();
         Student[] students = new Student[0];
         try {
             students = objectMapper.readValue(new File(filename), Student[].class);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        for(Student stu: students ) {
+        for (Student stu : students) {
             System.out.print(stu.getName() + " " + stu.getLastname() + " " + stu.getIndex());
             System.out.println();
+
 
         }
     }
