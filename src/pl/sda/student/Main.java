@@ -25,9 +25,8 @@ public class Main {
         studentList.add(student2) ;
         studentList.add(student3) ;
         studentList.add(student4) ;
-        studentList.add(student5);
-
-        try {
+        studentList.add(student5) ;
+       try {
             objectMapper.writeValue(new File("student_lista.json"), studentList);
             objectMapper.writeValue(new File("student.json"), student);
             objectMapper.writeValue(new File("student1.json"), student);
@@ -38,5 +37,8 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
+       JSONUtils jsonUtils = new JSONUtils() ;
+        jsonUtils.writeList("lista.json" , studentList);
+        jsonUtils.readList("Lista.json");
     }
 }
